@@ -1,0 +1,42 @@
+{
+    "paths": [
+        {
+            "name": "/books",
+            "lambdaFunction": "booksfunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/books"
+        }
+    ],
+    "resourceName": "booksapi",
+    "apiName": "booksapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "booksfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyreact-dev-121739-authRole",
+        "unAuthRoleName": "amplify-amplifyreact-dev-121739-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "booksfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
